@@ -14,9 +14,8 @@ type UpdatingResource struct {
 
 // NewUpdatingResource creates a new UpdatingResource. Thereby, f is the function
 // that will be called every ttl to compute a new value for x (i.e. x=f(x)).
-func NewUpdatingResource(f func(x interface{}) interface{}, ttl time.Duration) *UpdatingResource {
+func NewUpdatingResource(x interface{}, f func(x interface{}) interface{}, ttl time.Duration) *UpdatingResource {
 	var mu sync.RWMutex
-	x := f(nil)
 	go func(f func(x interface{}) interface{}) {
 		ticker := time.NewTicker(ttl)
 		for {
