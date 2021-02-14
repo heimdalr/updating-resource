@@ -19,7 +19,7 @@ func Example() {
 
 	// query the resource 6 times
 	for i := 0; i <6; i++{
-		time.Sleep(240 * time.Millisecond)
+		time.Sleep(200 * time.Millisecond)
 		x := r.Get().(string)
 		fmt.Printf("%s\n", x)
 	}
