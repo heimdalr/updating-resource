@@ -12,18 +12,27 @@ package main
 
 import (
 	"fmt"
-	"strconv"
 	"time"
 
 	"github.com/sebogh/updating-resource"
 )
 
 func main() {
-	f := func(_ interface{}) interface{} { return strconv.Itoa(time.Now().Second()) }
-	r := updatingresource.NewUpdatingResource(f, time.Second)
 
-	for i := 0; i <10; i++{
-		time.Sleep(300 * time.Millisecond)
+	// the update function
+	f := func(x interface{}) interface{} {
+		if x == nil {
+			return "-"
+		}
+		return fmt.Sprintf("%s-", x)
+	}
+
+	// creating the new resource
+	r := updatingresource.NewUpdatingResource(f, 500 * time.Millisecond)
+
+	// query the resource 6 times
+	for i := 0; i <6; i++{
+		time.Sleep(250 * time.Millisecond)
 		x := r.Get().(string)
 		fmt.Printf("%s\n", x)
 	}
