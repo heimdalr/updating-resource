@@ -17,11 +17,16 @@ func Example() {
 	// creating the new resource
 	r := updatingresource.NewUpdatingResource("-", f, 500 * time.Millisecond)
 
-	// query the resource 6 times
-	for i := 0; i <6; i++{
+	// query the resource 8 times
+	for i := 0; i <8; i++{
 		time.Sleep(200 * time.Millisecond)
 		x := r.Get().(string)
 		fmt.Printf("%s\n", x)
+
+		// stop updating after the 6th time
+		if i == 6 {
+			r.Done()
+		}
 	}
 
 	// Output:
@@ -29,6 +34,8 @@ func Example() {
 	// -
 	// --
 	// --
+	// ---
+	// ---
 	// ---
 	// ---
 }
