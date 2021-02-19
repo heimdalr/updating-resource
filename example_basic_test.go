@@ -9,33 +9,34 @@ import (
 
 func Example() {
 
-	// the update function
-	f := func(x interface{}) interface{} {
-		return fmt.Sprintf("%s-", x)
+	// the function to call
+	var update = func(x interface{}) (interface{}, error) {
+		y := x
+		if y == nil { y = "" }
+		return fmt.Sprintf("%s-", y), nil
 	}
 
-	// creating the new resource
-	r := updatingresource.NewUpdatingResource("-", f, 500 * time.Millisecond)
-
-	// query the resource 8 times
-	for i := 0; i <8; i++{
-		time.Sleep(200 * time.Millisecond)
-		x := r.Get().(string)
-		fmt.Printf("%s\n", x)
-
-		// stop updating after the 6th time
-		if i == 6 {
-			r.Done()
-		}
+	// the resource config
+	config := updatingresource.Config{
+		Name:     "dashes",
+		Update:   update,
+		Interval: 300 * time.Millisecond,
 	}
+	resource := config.NewResource()
+
+	fmt.Printf("%s\n", resource.Get().(string))
+
+	resource.Tick()
+	time.Sleep(50 * time.Millisecond)
+
+	fmt.Printf("%s\n", resource.Get().(string))
+
+	time.Sleep(450 * time.Millisecond)
+
+	fmt.Printf("%s\n", resource.Get().(string))
 
 	// Output:
 	// -
-	// -
 	// --
-	// --
-	// ---
-	// ---
-	// ---
 	// ---
 }
