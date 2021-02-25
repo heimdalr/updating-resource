@@ -4,7 +4,6 @@
 [![Go Reference](https://pkg.go.dev/badge/github.com/heimdalr/updating-resource.svg)](https://pkg.go.dev/github.com/heimdalr/updating-resource)
 [![Go Playground](https://img.shields.io/badge/Go-playground-blue)](https://play.golang.org/p/l0PAgFZQ8zV)
 [![Go Report Card](https://goreportcard.com/badge/github.com/heimdalr/updating-resource)](https://goreportcard.com/report/github.com/heimdalr/updating-resource)
-[![Known Vulnerabilities](https://snyk.io/test/github/heimdalr/updating-resource/badge.svg)](https://snyk.io/test/github/heimdalr/updating-resource)
 
 updating-resource provides means to wrap objects whose value is then regularly and asynchronously computed / updated.
 
