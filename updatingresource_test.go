@@ -2,7 +2,7 @@ package updatingresource_test
 
 import (
 	"fmt"
-	"github.com/sebogh/updating-resource"
+	"github.com/heimdalr/updating-resource"
 	"reflect"
 	"testing"
 	"time"

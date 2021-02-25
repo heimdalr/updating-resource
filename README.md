@@ -1,7 +1,7 @@
 # updating-resource
 
-[![Tests](https://github.com/sebogh/updating-resource/workflows/Tests/badge.svg)](https://github.com/sebogh/updating-resource/actions?query=workflow%3ATests)
-[![Go Reference](https://pkg.go.dev/badge/github.com/sebogh/updating-resource.svg)](https://pkg.go.dev/github.com/sebogh/updating-resource)
+[![Tests](https://github.com/heimdalr/updating-resource/workflows/Tests/badge.svg)](https://github.com/heimdalr/updating-resource/actions?query=workflow%3ATests)
+[![Go Reference](https://pkg.go.dev/badge/github.com/heimdalr/updating-resource.svg)](https://pkg.go.dev/github.com/heimdalr/updating-resource)
 
 updating-resource provides means to wrap objects whose value is then regularly and asynchronously computed / updated.
 
@@ -14,7 +14,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/sebogh/updating-resource"
+	"github.com/heimdalr/updating-resource"
 )
 
 func main() {

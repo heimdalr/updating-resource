@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/sebogh/updating-resource"
+	"github.com/heimdalr/updating-resource"
 )
 
 func Example() {
