@@ -112,7 +112,7 @@ func TestNewResource_ErrorCallback(t *testing.T) {
 
 	// construct an updating resource
 	var updateFunction = func(x interface{}) (interface{}, error) {
-		return nil, fmt.Errorf("something bad happend")
+		return nil, fmt.Errorf("something bad happened")
 	}
 	successCounter := 0
 	successFun := func(x interface{}, name string) { successCounter += 1 }
