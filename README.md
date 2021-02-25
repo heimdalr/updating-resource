@@ -3,6 +3,7 @@
 [![Tests](https://github.com/heimdalr/updating-resource/workflows/Tests/badge.svg)](https://github.com/heimdalr/updating-resource/actions?query=workflow%3ATests)
 [![Go Reference](https://pkg.go.dev/badge/github.com/heimdalr/updating-resource.svg)](https://pkg.go.dev/github.com/heimdalr/updating-resource)
 [![Go Playground](https://img.shields.io/badge/Go-playground-blue)](https://play.golang.org/p/l0PAgFZQ8zV)
+[![Go Report Card](https://goreportcard.com/badge/github.com/heimdalr/updating-resource)](https://goreportcard.com/report/github.com/heimdalr/updating-resource)
 
 updating-resource provides means to wrap objects whose value is then regularly and asynchronously computed / updated.
 
