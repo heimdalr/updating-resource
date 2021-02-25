@@ -46,7 +46,6 @@ type Resource struct {
 
 	// channel to manually trigger an update
 	tick chan bool
-
 }
 
 // NewResource creates a new Resource.

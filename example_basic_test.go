@@ -12,7 +12,9 @@ func Example() {
 	// the function to call
 	var update = func(x interface{}) (interface{}, error) {
 		y := x
-		if y == nil { y = "" }
+		if y == nil {
+			y = ""
+		}
 		return fmt.Sprintf("%s-", y), nil
 	}
 

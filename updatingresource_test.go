@@ -85,7 +85,7 @@ func TestNewResource_SuccessCallbacks(t *testing.T) {
 		return fmt.Sprintf("%s-", y), nil
 	}
 	successCounter := 0
-	successFun := func(x interface{}, name string){ successCounter += 1 }
+	successFun := func(x interface{}, name string) { successCounter += 1 }
 	updatingResourceConfig := updatingresource.Config{
 		Name:    "dashes",
 		Update:  updateFunction,
@@ -115,9 +115,9 @@ func TestNewResource_ErrorCallback(t *testing.T) {
 		return nil, fmt.Errorf("something bad happend")
 	}
 	successCounter := 0
-	successFun := func(x interface{}, name string){ successCounter += 1 }
+	successFun := func(x interface{}, name string) { successCounter += 1 }
 	errorCounter := 0
-	errorFun := func(e error, name string){ errorCounter += 1 }
+	errorFun := func(e error, name string) { errorCounter += 1 }
 	updatingResourceConfig := updatingresource.Config{
 		Name:    "dashes",
 		Update:  updateFunction,
